@@ -12,6 +12,17 @@ public class InsertionSort {
       }
    }
 
+   public static void sortOptimize(Comparable[] a) {
+      int N = a.length;
+      for (int i = 1; i < N; i++) {
+         Comparable e = a[i];
+         int j;
+         for (j = i; j > 0 && less(e, a[j-1]); j--)
+            a[j] = a[j-1];
+         a[j] = e;
+      }
+   }
+
    private static boolean less(Comparable v, Comparable w) {
       return v.compareTo(w) < 0;
    }
@@ -42,5 +53,10 @@ public class InsertionSort {
       assert isSorted(a);
       System.out.println(isSorted(a));
       show(a);
+      String[] b = new String[]{"c", "a", "z", "f", "b", "e", "d", "n", "m"};
+      sort(b);
+      assert isSorted(b);
+      System.out.println(isSorted(b));
+      show(b);
    }
 }
