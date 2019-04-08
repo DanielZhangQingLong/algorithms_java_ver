@@ -14,6 +14,7 @@ public class SortCompare {
         Stopwatch timer = Stopwatch.createStarted();
         if(alg.equals("InsertionSort")) InsertionSort.sort(a);
         if(alg.equals("SelectionSort")) SelectionSort.sort(a);
+        if(alg.equals("ShellSort")) ShellSort.sort(a);
         return timer.elapsed(TimeUnit.MILLISECONDS);
     }
 
